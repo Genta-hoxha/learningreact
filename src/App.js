@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+// import React from "react";
+// import Reuse from "./Reuse";
+// import Component1 from "./components/Component1";
+// const App = () => {
+//   const userData = { name: "John Doe", email: "john@example.com" };
+//   const postData = {
+//     title: "First Post",
+//     body: "This is the content of the first post.",
+//   };
 
-function App() {
+//   return (
+//     <>
+//       <Component1 imageUrl="images/component1.jpg" />
+//       <div>
+//         <Reuse type="user" data={userData} />
+//         <Reuse type="post" data={postData} />
+//       </div>
+//     </>
+//   );
+// };
+
+// export default App;
+import React from "react";
+import TextComponent from "./components/TextComponent";
+import ImageComponent from "./components/ImageComponent";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div>
+        <h1>Reusable Components with Redux Toolkit</h1>
+        <TextComponent />
+        <ImageComponent />
+      </div>
+    </Provider>
   );
-}
+};
 
 export default App;
