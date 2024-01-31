@@ -20,21 +20,19 @@
 // };
 
 // export default App;
+
+// App.js
 import React from "react";
-import TextComponent from "./components/TextComponent";
-import ImageComponent from "./components/ImageComponent";
-import { Provider } from "react-redux";
-import { store } from "./store/store";
+import { BrowserRouter as Router } from "react-router-dom";
+import AppRoutes from "./components/Routes/routes";
 
 const App = () => {
   return (
-    <Provider store={store}>
+    <Router>
       <div>
-        <h1>Reusable Components with Redux Toolkit</h1>
-        <TextComponent />
-        <ImageComponent />
+        <AppRoutes />
       </div>
-    </Provider>
+    </Router>
   );
 };
 
